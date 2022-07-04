@@ -123,7 +123,7 @@ public class GUI {
             time = time.replace("/", "-");
             time = time.replace(":", "-");
             time = time.replace(" ", "-");
-            String name = "Gra-" + time + ".json";
+            String name = "Game-" + time + ".json";
             JSONArray list = new JSONArray();
             for (Component component : sudokuBoard.getComponents()) {
                 JSONObject cell = new JSONObject();
@@ -186,12 +186,12 @@ public class GUI {
         }
     }
 
-    public void createGameBoard(){
-        for(Row row:board.getRows()){
-            for(Cell cell:row.getCells()){
+    public void createGameBoard() {
+        for (Row row : board.getRows()) {
+            for (Cell cell : row.getCells()) {
                 int value = cell.getValue();
                 var cellInGui = new EmptyCell(cell.getRow(), cell.getColumn());
-                if (value==0) {
+                if (value == 0) {
                     cellInGui.setText("");
                     cellInGui.setBackground(Color.cyan);
                     cellInGui.addKeyListener(new KeyAdapter() {
